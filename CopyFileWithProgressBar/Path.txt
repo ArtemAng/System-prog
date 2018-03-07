@@ -1,0 +1,63 @@
+﻿https://ru.stackoverflow.com/questions/11861/%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-gui-%D0%B8%D0%B7-%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%B3%D0%BE-%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%B0
+
+
+
+
+
+//Task.Factory.StartNew(() =>
+//    {
+//        if (tbFrom.Text == null || tbWhere.Text == null) return;
+//        byte[] buffer = new byte[4096];
+//        try
+//        {
+//            using (var reader = new FileStream(tbFrom.Text, FileMode.Open, FileAccess.Read))
+//            {
+//                double sizeReader = reader.Length;
+//                sync.Post((x) => progressBarWorker.Maximum = (int)Math.Round(sizeReader / buffer.Length), null);
+//                using (FileStream writer = new FileStream(tbWhere.Text, FileMode.OpenOrCreate, FileAccess.ReadWrite))
+//                {
+//                    int size = 0;
+//                    do
+//                    {
+//                        size = reader.Read(buffer, 0, buffer.Length);
+//                        writer.Write(buffer, 0, size);
+
+//                        sync.Post((x) => progressBarWorker.Increment(1), null);
+
+//                    } while (size > 0);
+//                }
+//            }
+//        }
+//        catch (AggregateException ex)
+//        {
+//            MessageBox.Show(ex.Message);
+//        }
+//    });
+
+
+
+//var sync = SynchronizationContext.Current;
+
+
+
+//progressBarWorker.Maximum = (int)Math.Round(sizeReader / buffer.Length);
+
+
+//this.BeginInvoke(new Action(() =>
+//{
+//    progressBarWorker.Maximum = (int)Math.Round(sizeReader / buffer.Length);
+
+//}));
+
+
+
+//progressBarWorker.Increment(1);
+//if (progressBarWorker.Value == progressBarWorker.Maximum)
+//{
+//    MessageBox.Show("Сopying finished!!!");
+//}
+
+//Invoke(new Action(() =>
+//{
+//    progressBarWorker.Increment(1);
+//}));
